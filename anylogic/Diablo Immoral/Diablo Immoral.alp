@@ -245,6 +245,54 @@
 						</ParameterEditor>
 					</Properties>                 
 				</Variable>
+				<Variable Class="Parameter">
+					<Id>1655993627623</Id>
+					<Name><![CDATA[RiftGemChance]]></Name>
+					<X>250</X><Y>-350</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[0.05]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1655993627621</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1655994007066</Id>
+					<Name><![CDATA[CraftedGemChance]]></Name>
+					<X>250</X><Y>-400</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[0.045]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1655994007064</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
 			</Variables>
 			<Events>
 				<Event>
@@ -401,6 +449,18 @@ return true;]]></Body>
 							<Name><![CDATA[DailyRareCrests]]></Name>
 							<Value Class="CodeValue">
 								<Code><![CDATA[DailyRareCrests]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[RiftGemChance]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[RiftGemChance]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[CraftedGemChance]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[CraftedGemChance]]></Code>
 							</Value>
 						</Parameter>
 					</Parameters>
@@ -668,6 +728,36 @@ return true;]]></Body>
 						<Type><![CDATA[double]]></Type>        
 					</Properties>
 				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1655995303505</Id>
+					<Name><![CDATA[MaxEmbers]]></Name>
+					<X>250</X><Y>-200</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="true" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[200]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1655995328186</Id>
+					<Name><![CDATA[MaxAdditionalEmbers]]></Name>
+					<X>250</X><Y>-150</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="true" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[120]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
 				<Variable Class="Parameter">
 					<Id>1655899515459</Id>
 					<Name><![CDATA[PlayedMinutesPerDay]]></Name>
@@ -908,13 +998,61 @@ return true;]]></Body>
 						</ParameterEditor>
 					</Properties>                 
 				</Variable>
+				<Variable Class="Parameter">
+					<Id>1655993565735</Id>
+					<Name><![CDATA[RiftGemChance]]></Name>
+					<X>50</X><Y>-550</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[0.05]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1655993565733</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1655993972044</Id>
+					<Name><![CDATA[CraftedGemChance]]></Name>
+					<X>50</X><Y>-600</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[0.045]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1655993972042</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
 			</Variables>
 			<StatechartElements>
 				<StatechartElement Class="State" ParentState="ROOT_NODE">
 					<Id>1655902687953</Id>
-					<Name><![CDATA[WaitingForPlayingTime]]></Name>
+					<Name><![CDATA[WaitingForTimeOrAvailableEmbers]]></Name>
 					<X>300</X><Y>-600</Y>
-					<Label><X>30</X><Y>25</Y></Label>
+					<Label><X>5</X><Y>25</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
@@ -1042,7 +1180,7 @@ LegendaryCrests = InitialLegendaryCrests;]]></Action>
 							<Code><![CDATA[1]]></Code>
 							<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
 						</Timeout>
-						<Condition><![CDATA[AvailableTime > 0]]></Condition>
+						<Condition><![CDATA[(AvailableTime > 0) && (EarnedFadingEmbers < (MaxEmbers + (MaxAdditionalEmbers * min(1, LegendaryCrests + RareCrests))))]]></Condition>
 						<Rate Class="CodeUnitValue">
 							<Code><![CDATA[1]]></Code>
 							<Unit Class="RateUnits"><![CDATA[PER_DAY]]></Unit>
@@ -1512,7 +1650,7 @@ RareCrests += MonthlyRareCrests;]]></Action>
 				<EmbeddedObject>
 					<Id>1655931203487</Id>
 					<Name><![CDATA[elderRift]]></Name>
-					<X>250</X><Y>-100</Y>
+					<X>250</X><Y>-50</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1531,6 +1669,12 @@ RareCrests += MonthlyRareCrests;]]></Action>
 					<Parameters>
 						<Parameter>
 							<Name><![CDATA[AverageRiftDurationInMinutes]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[FiveStarChance]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[RiftGemChance]]></Code>
+							</Value>
 						</Parameter>
 					</Parameters>
 					<ReplicationFlag>false</ReplicationFlag>
@@ -1576,7 +1720,7 @@ RareCrests += MonthlyRareCrests;]]></Action>
 				<EmbeddedObject>
 					<Id>1655931285975</Id>
 					<Name><![CDATA[gemCrafter]]></Name>
-					<X>250</X><Y>-150</Y>
+					<X>250</X><Y>-100</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1593,6 +1737,12 @@ RareCrests += MonthlyRareCrests;]]></Action>
 						</GenericParameterSubstituteReference>
 					</GenericParameterSubstitute>
 					<Parameters>
+						<Parameter>
+							<Name><![CDATA[SuccessChance]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[CraftedGemChance]]></Code>
+							</Value>
+						</Parameter>
 					</Parameters>
 					<ReplicationFlag>false</ReplicationFlag>
 					<Replication Class="CodeValue">
@@ -1893,6 +2043,30 @@ RareCrests += MonthlyRareCrests;]]></Action>
 						</ParameterEditor>
 					</Properties>                 
 				</Variable>
+				<Variable Class="Parameter">
+					<Id>1655993211478</Id>
+					<Name><![CDATA[FiveStarChance]]></Name>
+					<X>200</X><Y>-200</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[0.05]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1655993211476</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
 			</Variables>
 			<StatechartElements>
 				<StatechartElement Class="State" ParentState="ROOT_NODE">
@@ -1922,20 +2096,23 @@ RareCrests = 0;
 
 if(player.LegendaryCrests >= 10) {
 	LegendaryCrests = 10;
-	player.LegendaryCrests -= 10;
 } else if(player.LegendaryCrests >= 3) {
 	LegendaryCrests = 3;
-	player.LegendaryCrests -= 3;
 } else {
 	LegendaryCrests = player.LegendaryCrests;
-	player.LegendaryCrests = 0;
 	int remaining = 3 - LegendaryCrests;
-	while((remaining > 0) && (player.RareCrests > 0)) {
+	while((remaining > 0) && (player.RareCrests > RareCrests)) {
+		if(RareCrests > 0) {
+			if(player.AvailableTime > AverageRiftDurationInMinutes) {
+				break;
+			}
+		}
 		remaining--;
 		RareCrests++;
-		player.RareCrests--;
 	}
 }
+player.LegendaryCrests -= LegendaryCrests;
+player.RareCrests -= RareCrests;
 
 //Compute rift duration
 RiftDurationInMinutes = max(0, normal(0.5, AverageRiftDurationInMinutes));]]></EntryAction>
@@ -2014,6 +2191,7 @@ RiftDurationInMinutes = max(0, normal(0.5, AverageRiftDurationInMinutes));]]></E
 					</Points>
 					<IconOffset>50.0</IconOffset>
 					<Properties Source="1655933840200" Target="1655933862787" Trigger="timeout">
+						<Action><![CDATA[player.AvailableTime -= RiftDurationInMinutes;]]></Action>
 						<Timeout Class="CodeUnitValue">
 							<Code><![CDATA[RiftDurationInMinutes]]></Code>
 							<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
@@ -2075,12 +2253,46 @@ RiftDurationInMinutes = max(0, normal(0.5, AverageRiftDurationInMinutes));]]></E
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
-					<Body><![CDATA[RiftLoot loot = new RiftLoot();
+					<Body><![CDATA[// Initialize loot
+RiftLoot loot = new RiftLoot();
+loot.FiveStarGems = 0;
+loot.FadingEmbers = 0;
 
-loot.FiveStarGems = 6;
-loot.FadingEmbers = 8;
+// Compute fading embers
+int potentialFadingEmbers = 8 + RareCrests + LegendaryCrests;
+int availableEmbers = player.MaxEmbers;
+if((RareCrests + LegendaryCrests) > 0) {
+	availableEmbers += player.MaxAdditionalEmbers;
+}
+availableEmbers -= player.EarnedFadingEmbers;
+availableEmbers = max(0, availableEmbers);
+loot.FadingEmbers = min(potentialFadingEmbers, availableEmbers);
+
+// Compute legendary gems
+int gemsToGenerate = LegendaryCrests;
+if(LegendaryCrests == 10) {
+	gemsToGenerate += 3;
+}
+while(gemsToGenerate > 0) {
+	if(generateGem()) {
+		loot.FiveStarGems++;
+	}
+	gemsToGenerate--;
+}
 
 return loot;]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+					<ReturnType><![CDATA[boolean]]></ReturnType>
+					<Id>1655993016651</Id>
+					<Name><![CDATA[generateGem]]></Name>
+					<X>400</X><Y>-150</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[return uniform() < FiveStarChance;]]></Body>
 				</Function>
 			</Functions>
 			<AgentLinks>
@@ -2472,7 +2684,7 @@ return loot;]]></Body>
 			<ScaleRuler>
 				<Id>1655931285946</Id>
 				<Name><![CDATA[scale]]></Name>
-				<X>0</X><Y>-150</Y>
+				<X>-210</X><Y>-150</Y>
 				<PublicFlag>false</PublicFlag>
 				<PresentationFlag>false</PresentationFlag>
 				<ShowLabel>false</ShowLabel>
@@ -2487,11 +2699,213 @@ return loot;]]></Body>
 			</ScaleRuler>
 			<CurrentLevel>1655931285949</CurrentLevel>
 			<ConnectionsId>1655931285945</ConnectionsId>
+			<Variables>
+				<Variable Class="PlainVariable">
+					<Id>1655994423094</Id>
+					<Name><![CDATA[Gem]]></Name>
+					<X>200</X><Y>-50</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[CraftedGem]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1655993741959</Id>
+					<Name><![CDATA[SuccessChance]]></Name>
+					<X>50</X><Y>-50</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[0.045]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1655993741957</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+			</Variables>
+			<StatechartElements>
+				<StatechartElement Class="State" ParentState="ROOT_NODE">
+					<Id>1655994081800</Id>
+					<Name><![CDATA[Idle]]></Name>
+					<X>250</X><Y>100</Y>
+					<Label><X>85</X><Y>25</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties Width="200" Height="50">
+						<FillColor/>
+					</Properties>
+				</StatechartElement>
+				<StatechartElement Class="State" ParentState="ROOT_NODE">
+					<Id>1655994226416</Id>
+					<Name><![CDATA[PayRunes]]></Name>
+					<X>250</X><Y>200</Y>
+					<Label><X>70</X><Y>25</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties Width="200" Height="50">
+						<EntryAction><![CDATA[player.FaRunes -= player.FaRunesPerLegendaryGem;]]></EntryAction>
+						<FillColor/>
+					</Properties>
+				</StatechartElement>
+				<StatechartElement Class="State" ParentState="ROOT_NODE">
+					<Id>1655994258644</Id>
+					<Name><![CDATA[CraftGem]]></Name>
+					<X>250</X><Y>300</Y>
+					<Label><X>70</X><Y>25</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties Width="200" Height="50">
+						<EntryAction><![CDATA[Gem = GenerateGem();]]></EntryAction>
+						<FillColor/>
+					</Properties>
+				</StatechartElement>
+				<StatechartElement Class="EntryPoint" ParentState="ROOT_NODE">
+					<Id>1655994075269</Id>
+					<Name><![CDATA[statechart]]></Name>
+					<X>350</X><Y>50</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>0</X><Y>50</Y></Point>
+					</Points>
+					<Properties Target="1655994081800">
+					</Properties>	
+				</StatechartElement>
+				<StatechartElement Class="Transition" ParentState="ROOT_NODE">
+					<Id>1655994193078</Id>
+					<Name><![CDATA[transition]]></Name>
+					<X>350</X><Y>150</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>0</X><Y>50</Y></Point>
+					</Points>
+					<IconOffset>20.0</IconOffset>
+					<Properties Source="1655994081800" Target="1655994226416" Trigger="message">
+						<Timeout Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+						</Timeout>
+						<Condition><![CDATA[true]]></Condition>
+						<Rate Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="RateUnits"><![CDATA[PER_DAY]]></Unit>
+						</Rate>
+						<MessageType><![CDATA[String]]></MessageType>
+						<DefaultTransition>true</DefaultTransition>
+						<FilterType><![CDATA[equalsTo]]></FilterType>
+						<EqualsExpression><![CDATA["Craft"]]></EqualsExpression>
+						<SatisfiesExpression><![CDATA[true]]></SatisfiesExpression>
+					</Properties>	
+				</StatechartElement>
+				<StatechartElement Class="Transition" ParentState="ROOT_NODE">
+					<Id>1655994316761</Id>
+					<Name><![CDATA[transition1]]></Name>
+					<X>350</X><Y>250</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>0</X><Y>50</Y></Point>
+					</Points>
+					<IconOffset>20.0</IconOffset>
+					<Properties Source="1655994226416" Target="1655994258644" Trigger="timeout">
+						<Timeout Class="CodeUnitValue">
+							<Code><![CDATA[10]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
+						</Timeout>
+						<Condition><![CDATA[true]]></Condition>
+						<Rate Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="RateUnits"><![CDATA[PER_DAY]]></Unit>
+						</Rate>
+						<MessageType><![CDATA[Object]]></MessageType>
+						<DefaultTransition>true</DefaultTransition>
+						<FilterType><![CDATA[unconditionally]]></FilterType>
+						<EqualsExpression><![CDATA["text"]]></EqualsExpression>
+						<SatisfiesExpression><![CDATA[true]]></SatisfiesExpression>
+					</Properties>	
+				</StatechartElement>
+				<StatechartElement Class="Transition" ParentState="ROOT_NODE">
+					<Id>1655994365834</Id>
+					<Name><![CDATA[transition2]]></Name>
+					<X>250</X><Y>330</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>-100</X><Y>0</Y></Point>
+						<Point><X>-100</X><Y>-210</Y></Point>
+						<Point><X>0</X><Y>-210</Y></Point>
+					</Points>
+					<IconOffset>210.0</IconOffset>
+					<Properties Source="1655994258644" Target="1655994081800" Trigger="timeout">
+						<Action><![CDATA[send(Gem, player);]]></Action>
+						<Timeout Class="CodeUnitValue">
+							<Code><![CDATA[10]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
+						</Timeout>
+						<Condition><![CDATA[true]]></Condition>
+						<Rate Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="RateUnits"><![CDATA[PER_DAY]]></Unit>
+						</Rate>
+						<MessageType><![CDATA[Object]]></MessageType>
+						<DefaultTransition>true</DefaultTransition>
+						<FilterType><![CDATA[unconditionally]]></FilterType>
+						<EqualsExpression><![CDATA["text"]]></EqualsExpression>
+						<SatisfiesExpression><![CDATA[true]]></SatisfiesExpression>
+					</Properties>	
+				</StatechartElement>
+			</StatechartElements>
+			<Functions>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+					<ReturnType><![CDATA[CraftedGem]]></ReturnType>
+					<Id>1655994450234</Id>
+					<Name><![CDATA[GenerateGem]]></Name>
+					<X>300</X><Y>-50</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[CraftedGem gem = new CraftedGem();
+gem.IsFiveStar = uniform() < SuccessChance;
+return gem;]]></Body>
+				</Function>
+			</Functions>
 			<AgentLinks>
 				<AgentLink>
 					<Id>1655931285945</Id>
 					<Name><![CDATA[connections]]></Name>
-					<X>50</X><Y>-50</Y>
+					<X>-160</X><Y>-50</Y>
 					<Label><X>15</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2500,6 +2914,11 @@ return loot;]]></Body>
 					<AgentLinkType>COLLECTION_OF_LINKS</AgentLinkType>
 					<AgentLinkBidirectional>true</AgentLinkBidirectional>
 					<MessageType><![CDATA[Object]]></MessageType>
+					<StatechartReference>
+						<PackageName><![CDATA[diablo_immoral]]></PackageName>
+						<ClassName><![CDATA[GemCrafter]]></ClassName>
+						<ItemName><![CDATA[statechart]]></ItemName>
+					</StatechartReference>
 					<LineStyle>SOLID</LineStyle>
 					<LineWidth>1</LineWidth>
 					<LineColor>-16777216</LineColor>
@@ -2513,7 +2932,7 @@ return loot;]]></Body>
 				<ContainerLink>
 					<Id>1655931285977</Id>
 					<Name><![CDATA[main]]></Name>
-					<X>50</X><Y>-100</Y>
+					<X>-160</X><Y>-100</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2526,7 +2945,7 @@ return loot;]]></Body>
 				<ContainerLink>
 					<Id>1655931285978</Id>
 					<Name><![CDATA[player]]></Name>
-					<X>150</X><Y>-100</Y>
+					<X>-60</X><Y>-100</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3079,6 +3498,9 @@ return loot;]]></Body>
 			<Parameters>			
 				<Parameter>
 					<ParameterName><![CDATA[PlayedMinutesPerDay]]></ParameterName>
+					<ParameterValue Class="CodeValue">
+						<Code><![CDATA[240]]></Code>
+					</ParameterValue>
 				</Parameter>
 				<Parameter>
 					<ParameterName><![CDATA[MonthlyLegendaryCrests]]></ParameterName>
@@ -3091,6 +3513,12 @@ return loot;]]></Body>
 				</Parameter>
 				<Parameter>
 					<ParameterName><![CDATA[DailyRareCrests]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[RiftGemChance]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[CraftedGemChance]]></ParameterName>
 				</Parameter>
 			</Parameters>			
 			<PresentationProperties>
@@ -3126,7 +3554,7 @@ return loot;]]></Body>
 			<LoadRootFromSnapshot>false</LoadRootFromSnapshot>
 			<Variables>
 				<Variable Class="PlainVariable">
-					<Id>1655936781658</Id>
+					<Id>1656004950800</Id>
 					<Name><![CDATA[OutputData]]></Name>
 					<X>50</X><Y>-50</Y>
 					<Label><X>10</X><Y>0</Y></Label>
@@ -3140,10 +3568,114 @@ return loot;]]></Body>
 						</InitialValue>
 					</Properties>
 				</Variable>
+				<Variable Class="CollectionVariable">
+					<Id>1656004950784</Id>
+					<Name><![CDATA[PlayedMinutesPerDayArray]]></Name>
+					<X>50</X><Y>-100</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
+						<CollectionClass><![CDATA[ArrayList]]></CollectionClass>
+						<ElementClass><![CDATA[Double]]></ElementClass>
+						<ValueElementClass><![CDATA[String]]></ValueElementClass>
+						<CollectionInitializer Class="CodeValue">
+							<Code><![CDATA[{2.0, 5.0, 10.0, 30.0, 60.0, 120.0, 240.0, 360.0, 480.0, 720.0}]]></Code>
+						</CollectionInitializer>
+					</Properties>
+
+				</Variable>
+				<Variable Class="CollectionVariable">
+					<Id>1656004950790</Id>
+					<Name><![CDATA[RiftChances]]></Name>
+					<X>50</X><Y>-150</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
+						<CollectionClass><![CDATA[ArrayList]]></CollectionClass>
+						<ElementClass><![CDATA[Double]]></ElementClass>
+						<ValueElementClass><![CDATA[String]]></ValueElementClass>
+						<CollectionInitializer Class="CodeValue">
+							<Code><![CDATA[{0.05, 0.0005}]]></Code>
+						</CollectionInitializer>
+					</Properties>
+
+				</Variable>
+				<Variable Class="CollectionVariable">
+					<Id>1656004950792</Id>
+					<Name><![CDATA[CraftChances]]></Name>
+					<X>50</X><Y>-200</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
+						<CollectionClass><![CDATA[ArrayList]]></CollectionClass>
+						<ElementClass><![CDATA[Double]]></ElementClass>
+						<ValueElementClass><![CDATA[String]]></ValueElementClass>
+						<CollectionInitializer Class="CodeValue">
+							<Code><![CDATA[{0.045, 0.00045}]]></Code>
+						</CollectionInitializer>
+					</Properties>
+
+				</Variable>
 			</Variables>
+			<Functions>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1656004950794</Id>
+					<Name><![CDATA[getPlayedMinutes]]></Name>
+					<X>300</X><Y>-100</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[index]]></Name>
+						<Type><![CDATA[int]]></Type>
+					</Parameter>
+					<Body><![CDATA[return PlayedMinutesPerDayArray.get(index % 10);]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1656004950796</Id>
+					<Name><![CDATA[getRiftChance]]></Name>
+					<X>300</X><Y>-150</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[index]]></Name>
+						<Type><![CDATA[int]]></Type>
+					</Parameter>
+					<Body><![CDATA[return RiftChances.get(index / 10);]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1656004950798</Id>
+					<Name><![CDATA[getCraftChance]]></Name>
+					<X>300</X><Y>-200</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[index]]></Name>
+						<Type><![CDATA[int]]></Type>
+					</Parameter>
+					<Body><![CDATA[return CraftChances.get(index / 10);]]></Body>
+				</Function>
+			</Functions>
 			<Connectivity>
 				<TextFile>
-					<Id>1655932734003</Id>
+					<Id>1656004950802</Id>
 					<Name><![CDATA[OutputDataFile]]></Name>
 					<X>150</X><Y>-50</Y>
 					<Label><X>10</X><Y>0</Y></Label>
@@ -3164,7 +3696,7 @@ return loot;]]></Body>
 
 			<Presentation>
 				<Text>
-					<Id>1655913960018</Id>
+					<Id>1656004948874</Id>
 					<Name><![CDATA[text]]></Name>
 					<X>40</X><Y>30</Y>
 					<Label><X>10</X><Y>0</Y></Label>
@@ -3185,7 +3717,7 @@ return loot;]]></Body>
 					<Alignment>LEFT</Alignment>
 				</Text>
 				<Text>
-					<Id>1655913960019</Id>
+					<Id>1656004948875</Id>
 					<Name><![CDATA[text1]]></Name>
 					<X>50</X><Y>80</Y>
 					<Label><X>10</X><Y>0</Y></Label>
@@ -3206,7 +3738,7 @@ return loot;]]></Body>
 					<Alignment>LEFT</Alignment>
 				</Text>
 				<Text>
-					<Id>1655913960020</Id>
+					<Id>1656004948876</Id>
 					<Name><![CDATA[text2]]></Name>
 					<X>240</X><Y>80</Y>
 					<Label><X>10</X><Y>0</Y></Label>
@@ -3229,7 +3761,7 @@ return loot;]]></Body>
 					<Alignment>RIGHT</Alignment>
 				</Text>
 				<Text>
-					<Id>1655913960021</Id>
+					<Id>1656004948877</Id>
 					<Name><![CDATA[text3]]></Name>
 					<X>50</X><Y>110</Y>
 					<Label><X>10</X><Y>0</Y></Label>
@@ -3250,7 +3782,7 @@ return loot;]]></Body>
 					<Alignment>LEFT</Alignment>
 				</Text>
 				<Line>
-					<Id>1655913960022</Id>
+					<Id>1656004948878</Id>
 					<Name><![CDATA[line]]></Name>
 					<X>40</X><Y>130</Y>
 					<Label><X>10</X><Y>0</Y></Label>
@@ -3274,7 +3806,7 @@ return loot;]]></Body>
 					<Dz>0</Dz>
 				</Line>
 				<Text>
-					<Id>1655913960023</Id>
+					<Id>1656004948879</Id>
 					<Name><![CDATA[text4]]></Name>
 					<X>50</X><Y>150</Y>
 					<Label><X>10</X><Y>0</Y></Label>
@@ -3295,7 +3827,7 @@ return loot;]]></Body>
 					<Alignment>LEFT</Alignment>
 				</Text>
 				<Text>
-					<Id>1655913960024</Id>
+					<Id>1656004948880</Id>
 					<Name><![CDATA[text5]]></Name>
 					<X>240</X><Y>150</Y>
 					<Label><X>10</X><Y>0</Y></Label>
@@ -3317,6 +3849,336 @@ return loot;]]></Body>
 					</Font>
 					<Alignment>RIGHT</Alignment>
 				</Text>
+				<Rectangle>
+					<Id>1656004948881</Id>
+					<Name><![CDATA[rectangle]]></Name>
+					<X>40</X><Y>170</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>1</LineWidth>
+					<LineColor/>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<Width>210</Width>
+					<Height>30</Height>
+					<Rotation>0.0</Rotation>
+					<FillColor>-657931</FillColor>
+					<FillMaterial>null</FillMaterial>
+				</Rectangle>
+				<Text>
+					<Id>1656004948882</Id>
+					<Name><![CDATA[text6]]></Name>
+					<X>50</X><Y>180</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-12171190</Color>
+					<Text><![CDATA[MonthlyLegendaryCrests]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>12</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1656004948883</Id>
+					<Name><![CDATA[text7]]></Name>
+					<X>240</X><Y>180</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<VisibleCode><![CDATA[getCurrentIteration() > 0]]></VisibleCode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-12042869</Color>
+					<Text><![CDATA[?]]></Text>
+					<TextCode><![CDATA[format( MonthlyLegendaryCrests )]]></TextCode>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>12</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>RIGHT</Alignment>
+				</Text>
+				<Text>
+					<Id>1656004948884</Id>
+					<Name><![CDATA[text8]]></Name>
+					<X>50</X><Y>210</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-12171190</Color>
+					<Text><![CDATA[MonthlyRareCrests]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>12</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1656004948885</Id>
+					<Name><![CDATA[text9]]></Name>
+					<X>240</X><Y>210</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<VisibleCode><![CDATA[getCurrentIteration() > 0]]></VisibleCode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-12042869</Color>
+					<Text><![CDATA[?]]></Text>
+					<TextCode><![CDATA[format( MonthlyRareCrests )]]></TextCode>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>12</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>RIGHT</Alignment>
+				</Text>
+				<Rectangle>
+					<Id>1656004948886</Id>
+					<Name><![CDATA[rectangle1]]></Name>
+					<X>40</X><Y>230</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>1</LineWidth>
+					<LineColor/>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<Width>210</Width>
+					<Height>30</Height>
+					<Rotation>0.0</Rotation>
+					<FillColor>-657931</FillColor>
+					<FillMaterial>null</FillMaterial>
+				</Rectangle>
+				<Text>
+					<Id>1656004948887</Id>
+					<Name><![CDATA[text10]]></Name>
+					<X>50</X><Y>240</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-12171190</Color>
+					<Text><![CDATA[DailyLegendaryCrests]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>12</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1656004948888</Id>
+					<Name><![CDATA[text11]]></Name>
+					<X>240</X><Y>240</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<VisibleCode><![CDATA[getCurrentIteration() > 0]]></VisibleCode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-12042869</Color>
+					<Text><![CDATA[?]]></Text>
+					<TextCode><![CDATA[format( DailyLegendaryCrests )]]></TextCode>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>12</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>RIGHT</Alignment>
+				</Text>
+				<Text>
+					<Id>1656004948889</Id>
+					<Name><![CDATA[text12]]></Name>
+					<X>50</X><Y>270</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-12171190</Color>
+					<Text><![CDATA[DailyRareCrests]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>12</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1656004948890</Id>
+					<Name><![CDATA[text13]]></Name>
+					<X>240</X><Y>270</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<VisibleCode><![CDATA[getCurrentIteration() > 0]]></VisibleCode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-12042869</Color>
+					<Text><![CDATA[?]]></Text>
+					<TextCode><![CDATA[format( DailyRareCrests )]]></TextCode>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>12</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>RIGHT</Alignment>
+				</Text>
+				<Rectangle>
+					<Id>1656004948891</Id>
+					<Name><![CDATA[rectangle2]]></Name>
+					<X>40</X><Y>290</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>1</LineWidth>
+					<LineColor/>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<Width>210</Width>
+					<Height>30</Height>
+					<Rotation>0.0</Rotation>
+					<FillColor>-657931</FillColor>
+					<FillMaterial>null</FillMaterial>
+				</Rectangle>
+				<Text>
+					<Id>1656004948892</Id>
+					<Name><![CDATA[text14]]></Name>
+					<X>50</X><Y>300</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-12171190</Color>
+					<Text><![CDATA[RiftGemChance]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>12</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1656004948893</Id>
+					<Name><![CDATA[text15]]></Name>
+					<X>240</X><Y>300</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<VisibleCode><![CDATA[getCurrentIteration() > 0]]></VisibleCode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-12042869</Color>
+					<Text><![CDATA[?]]></Text>
+					<TextCode><![CDATA[format( RiftGemChance )]]></TextCode>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>12</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>RIGHT</Alignment>
+				</Text>
+				<Text>
+					<Id>1656004948894</Id>
+					<Name><![CDATA[text16]]></Name>
+					<X>50</X><Y>330</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-12171190</Color>
+					<Text><![CDATA[CraftedGemChance]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>12</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1656004948895</Id>
+					<Name><![CDATA[text17]]></Name>
+					<X>240</X><Y>330</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<VisibleCode><![CDATA[getCurrentIteration() > 0]]></VisibleCode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-12042869</Color>
+					<Text><![CDATA[?]]></Text>
+					<TextCode><![CDATA[format( CraftedGemChance )]]></TextCode>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>12</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>RIGHT</Alignment>
+				</Text>
 			</Presentation>
 
 			<AfterExperimentCode><![CDATA[OutputDataFile.println(Statistics.header());
@@ -3325,10 +4187,13 @@ for(Statistics s : OutputData.getStatistics()) {
 	OutputDataFile.println(s.toString());
 }]]></AfterExperimentCode>
 			<AllowParallelEvaluations>true</AllowParallelEvaluations>
-			<UseFreeformParameters>false</UseFreeformParameters>
+			<UseFreeformParameters>true</UseFreeformParameters>
 			<NumberOfRuns>10</NumberOfRuns>
 			<FreeformParamValue>	
 				<Id>1655911494861</Id>
+				<Expression Class="CodeValue">
+					<Code><![CDATA[getPlayedMinutes(index)]]></Code>
+				</Expression>
 			</FreeformParamValue>
 			<FreeformParamValue>	
 				<Id>1655930997015</Id>
@@ -3341,6 +4206,18 @@ for(Statistics s : OutputData.getStatistics()) {
 			</FreeformParamValue>
 			<FreeformParamValue>	
 				<Id>1655931051831</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1655993627623</Id>
+				<Expression Class="CodeValue">
+					<Code><![CDATA[getRiftChance(index)]]></Code>
+				</Expression>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1655994007066</Id>
+				<Expression Class="CodeValue">
+					<Code><![CDATA[getCraftChance(index)]]></Code>
+				</Expression>
 			</FreeformParamValue>
 			<RangeVariationParamValue>	
 				<Id>1655911494861</Id>
@@ -3369,6 +4246,14 @@ for(Statistics s : OutputData.getStatistics()) {
 			</RangeVariationParamValue>
 			<RangeVariationParamValue>	
 				<Id>1655931051831</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1655993627623</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1655994007066</Id>
 				<Type>FIXED</Type>
 			</RangeVariationParamValue>
 			<ModelTimeProperties>
@@ -3488,6 +4373,8 @@ public class Statistics implements Serializable {
 	
 	private double PlayedMinutesPerDay;
 	private double DaysToReachTargetNumberOfFiveStarGems;
+	private double RiftGemChance;
+	private double CraftGemChance;
 	private int DailyRareCrests;
 	private int DailyLegendaryCrests;
 	private int MonthlyRareCrests;
@@ -3508,6 +4395,8 @@ public class Statistics implements Serializable {
     	this.MonthlyLegendaryCrests = p.MonthlyLegendaryCrests;
     	this.TargetNumberOfFiveStarGems = p.TargetFiveStarGems;
     	this.DaysToReachTargetNumberOfFiveStarGems = p.DaysToReachObjective;
+    	this.RiftGemChance = p.RiftGemChance;
+    	this.CraftGemChance = p.CraftedGemChance;
     }
 
 	@Override
@@ -3518,13 +4407,25 @@ public class Statistics implements Serializable {
 		builder.append(Integer.toString(this.DailyLegendaryCrests)).append(";");
 		builder.append(Integer.toString(this.MonthlyRareCrests)).append(";");
 		builder.append(Integer.toString(this.MonthlyLegendaryCrests)).append(";");
+		builder.append(Double.toString(this.RiftGemChance)).append(";");
+		builder.append(Double.toString(this.CraftGemChance)).append(";");
 		builder.append(Integer.toString(this.TargetNumberOfFiveStarGems)).append(";");
 		builder.append(Double.toString(this.DaysToReachTargetNumberOfFiveStarGems));
 		return builder.toString();
 	}
 	
 	public static String header() {
-		return "PlayedMinutesPerDay;DailyRareCrests;DailyLegendaryCrests;MonthlyRareCrests;MonthlyLegendaryCrests;TargetNumberOfFiveStarGems;DaysToReachTargetNumberOfFiveStarGems";
+		StringBuilder builder = new StringBuilder();
+		builder.append("PlayedMinutesPerDay;");
+		builder.append("DailyRareCrests;");
+		builder.append("DailyLegendaryCrests;");
+		builder.append("MonthlyRareCrests;");
+		builder.append("MonthlyLegendaryCrests;");
+		builder.append("ChanceOfFindingGemInRift;");
+		builder.append("ChanceOfCraftingGem;");
+		builder.append("TargetNumberOfFiveStarGems;");
+		builder.append("DaysToReachTargetNumberOfFiveStarGems");
+		return builder.toString();
 	}
 
 	/**
