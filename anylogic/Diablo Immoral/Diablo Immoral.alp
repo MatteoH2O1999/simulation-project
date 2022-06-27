@@ -147,6 +147,36 @@
 						</InitialValue>
 					</Properties>
 				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1656347887101</Id>
+					<Name><![CDATA[PresentationAgent]]></Name>
+					<X>850</X><Y>-50</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>false</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="private" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1656349546860</Id>
+					<Name><![CDATA[MaxFadingEmbers]]></Name>
+					<X>850</X><Y>-100</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>false</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="private" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[players.get(0).MaxEmbers + players.get(0).MaxAdditionalEmbers]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
 				<Variable Class="Parameter">
 					<Id>1655911494861</Id>
 					<Name><![CDATA[PlayedMinutesPerDay]]></Name>
@@ -348,6 +378,9 @@
 					</Properties>
 					<Action><![CDATA[if(IsFinished()) {
 	writeData();
+	if(OutputData.size() != players.size()) {
+		throw new RuntimeException();
+	}
 	getEngine().finish();
 }]]></Action>
 				</Event>
@@ -559,6 +592,325 @@ return avg / players.size();]]></Body>
 					<Z>0</Z>
 					<LevelVisibility>DIM_NON_CURRENT</LevelVisibility>
 
+			<Presentation>
+				<Control Type="EditBox">
+				 	<EmbeddedIcon>false</EmbeddedIcon>				
+					<Id>1656347877345</Id>
+					<Name><![CDATA[editbox]]></Name>
+					<X>800</X><Y>60</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<BasicProperties Width="100" Height="30">
+                        <EmbeddedIcon>false</EmbeddedIcon>	
+						<FillColor/>
+						<TextColor/>
+						<Enabled>true</Enabled>
+					</BasicProperties>
+					<ExtendedProperties>
+						<Font Name="Dialog" Size="11" Style="0"/>
+						<MinValue><![CDATA[0]]></MinValue>
+						<MaxValue><![CDATA[9999]]></MaxValue>
+						<LinkTo>true</LinkTo>
+						<Link>PresentationAgent</Link>
+					</ExtendedProperties>
+				</Control>
+				<Text>
+					<Id>1656347985893</Id>
+					<Name><![CDATA[text]]></Name>
+					<X>680</X><Y>60</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[Player index:]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>18</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+    			<TimePlot>
+					<Id>1656348819798</Id>
+					<Name><![CDATA[Crests]]></Name>
+					<X>650</X><Y>140</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<AutoUpdate>true</AutoUpdate>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1656403200000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</RecurrenceCode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Width>260</Width>
+					<Height>210</Height>
+					<BackgroundColor/>
+					<BorderColor/>
+					<ChartArea>
+						<XOffset>50</XOffset>
+						<YOffset>30</YOffset>
+						<Width>180</Width>
+						<Height>120</Height>
+						<BackgroundColor>-1</BackgroundColor>
+						<BorderColor>-16777216</BorderColor>
+						<GridColor>-12566464</GridColor>
+					</ChartArea>
+					<Legend>
+						<Place>SOUTH</Place>
+						<TextColor>-16777216</TextColor>
+						<Size>30</Size>
+					</Legend>
+					<Labels>
+						<HorLabelsPosition>DEFAULT</HorLabelsPosition>
+						<VerLabelsPosition>DEFAULT</VerLabelsPosition>
+						<TextColor>-12566464</TextColor>
+					</Labels>
+					<ShowLegend>true</ShowLegend>
+					<TimeWindowsMovementType>MOVEMENT_WITH_TIME</TimeWindowsMovementType>		
+					<TimeWindowUnits>MODEL_TIME_UNIT</TimeWindowUnits>
+					<VerScaleFromExpression><![CDATA[0]]></VerScaleFromExpression>
+					<VerScaleToExpression><![CDATA[5]]></VerScaleToExpression>
+					<VerScaleType>AUTO</VerScaleType>
+					<DrawLine>true</DrawLine>
+					<Interpolation>LINEAR</Interpolation>
+					<DatasetExpression>  
+						<Title><![CDATA[Rare Crests]]></Title>
+					<Id>0</Id>
+					<Expression><![CDATA[my_dataset]]></Expression>
+					<Color>-1644806</Color>
+					<Expression2><![CDATA[players.get(PresentationAgent).RareCrests]]></Expression2>
+					<Expression2Flag>true</Expression2Flag>
+						<PointStyle>NONE</PointStyle>
+						<LineWidth>3.0</LineWidth>
+					</DatasetExpression>
+					<DatasetExpression>  
+						<Title><![CDATA[Legendary Crests]]></Title>
+					<Id>0</Id>
+					<Expression><![CDATA[my_dataset1]]></Expression>
+					<Color>-65281</Color>
+					<Expression2><![CDATA[players.get(PresentationAgent).LegendaryCrests]]></Expression2>
+					<Expression2Flag>true</Expression2Flag>
+						<PointStyle>NONE</PointStyle>
+						<LineWidth>3.0</LineWidth>
+					</DatasetExpression>
+					<SamplesToKeep>100</SamplesToKeep>
+					<TimeWindowExpression><![CDATA[20]]></TimeWindowExpression>
+					<FillAreaUnderLine>false</FillAreaUnderLine>
+					<LabelFormat>MODEL_TIME_UNITS</LabelFormat>
+    			</TimePlot>
+    			<TimeStackChart>
+					<Id>1656349637988</Id>
+					<Name><![CDATA[chart]]></Name>
+					<X>650</X><Y>350</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<AutoUpdate>true</AutoUpdate>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1656403200000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</RecurrenceCode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Width>260</Width>
+					<Height>210</Height>
+					<BackgroundColor/>
+					<BorderColor/>
+					<ChartArea>
+						<XOffset>50</XOffset>
+						<YOffset>30</YOffset>
+						<Width>180</Width>
+						<Height>120</Height>
+						<BackgroundColor>-1</BackgroundColor>
+						<BorderColor>-16777216</BorderColor>
+						<GridColor>-12566464</GridColor>
+					</ChartArea>
+					<Legend>
+						<Place>SOUTH</Place>
+						<TextColor>-16777216</TextColor>
+						<Size>30</Size>
+					</Legend>
+					<Labels>
+						<HorLabelsPosition>DEFAULT</HorLabelsPosition>
+						<VerLabelsPosition>DEFAULT</VerLabelsPosition>
+						<TextColor>-12566464</TextColor>
+					</Labels>
+					<ShowLegend>true</ShowLegend>
+					<TimeWindowsMovementType>MOVEMENT_WITH_TIME</TimeWindowsMovementType>		
+					<TimeWindowUnits>WEEK</TimeWindowUnits>
+					<TimeWindowExpression><![CDATA[1]]></TimeWindowExpression>
+					<DatasetExpression>
+					<Id>0</Id>
+					<Expression><![CDATA[my_dataset]]></Expression>
+					<Color>-10496</Color>
+					<Expression2><![CDATA[MaxFadingEmbers - players.get(PresentationAgent).EarnedFadingEmbers]]></Expression2>
+					<Expression2Flag>true</Expression2Flag>  
+							<Title><![CDATA[Available Fading Embers]]></Title>
+					</DatasetExpression>
+					<DatasetExpression>
+					<Id>0</Id>
+					<Expression><![CDATA[my_dataset]]></Expression>
+					<Color>-4144960</Color>
+					<Expression2><![CDATA[players.get(PresentationAgent).EarnedFadingEmbers]]></Expression2>
+					<Expression2Flag>true</Expression2Flag>  
+							<Title><![CDATA[Earned Fading Embers]]></Title>
+					</DatasetExpression>
+					<SamplesToKeep>100</SamplesToKeep>
+					<VerScaleToExpression><![CDATA[1]]></VerScaleToExpression>
+					<VerScaleType>AUTO</VerScaleType>
+					<LabelFormat>MODEL_TIME_UNITS</LabelFormat>
+    			</TimeStackChart>
+    			<BarChart>
+					<Id>1656351334640</Id>
+					<Name><![CDATA[GeneralSituation]]></Name>
+					<X>50</X><Y>50</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<AutoUpdate>true</AutoUpdate>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1656403200000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</RecurrenceCode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Width>550</Width>
+					<Height>500</Height>
+					<BackgroundColor/>
+					<BorderColor/>
+					<ChartArea>
+						<XOffset>50</XOffset>
+						<YOffset>30</YOffset>
+						<Width>470</Width>
+						<Height>410</Height>
+						<BackgroundColor>-1</BackgroundColor>
+						<BorderColor>-16777216</BorderColor>
+						<GridColor>-12566464</GridColor>
+					</ChartArea>
+					<Legend>
+						<Place>SOUTH</Place>
+						<TextColor>-16777216</TextColor>
+						<Size>30</Size>
+					</Legend>
+					<Labels>
+						<HorLabelsPosition>DEFAULT</HorLabelsPosition>
+						<VerLabelsPosition>DEFAULT</VerLabelsPosition>
+						<TextColor>-12566464</TextColor>
+					</Labels>
+					<ShowLegend>true</ShowLegend>
+					<DataItem>
+					<Id>0</Id>
+					<Expression><![CDATA[players.findAll(p -> p.FiveStarGems == 0).size()]]></Expression>
+					<Color>-65536</Color>
+					<Expression2Flag>true</Expression2Flag>
+						<Title><![CDATA[0 Five Star Gems]]></Title>
+					</DataItem>
+					<DataItem>
+					<Id>0</Id>
+					<Expression><![CDATA[players.findAll(p -> p.FiveStarGems == 1).size()]]></Expression>
+					<Color>-47872</Color>
+					<Expression2Flag>true</Expression2Flag>
+						<Title><![CDATA[1 Five Star Gem]]></Title>
+					</DataItem>
+					<DataItem>
+					<Id>0</Id>
+					<Expression><![CDATA[players.findAll(p -> p.FiveStarGems == 2).size()]]></Expression>
+					<Color>-23296</Color>
+					<Expression2Flag>true</Expression2Flag>
+						<Title><![CDATA[2 Five Star Gems]]></Title>
+					</DataItem>
+					<DataItem>
+					<Id>0</Id>
+					<Expression><![CDATA[players.findAll(p -> p.FiveStarGems == 3).size()]]></Expression>
+					<Color>-10496</Color>
+					<Expression2Flag>true</Expression2Flag>
+						<Title><![CDATA[3 Five Star Gems]]></Title>
+					</DataItem>
+					<DataItem>
+					<Id>0</Id>
+					<Expression><![CDATA[players.findAll(p -> p.FiveStarGems == 4).size()]]></Expression>
+					<Color>-256</Color>
+					<Expression2Flag>true</Expression2Flag>
+						<Title><![CDATA[4 Five Star Gems]]></Title>
+					</DataItem>
+					<DataItem>
+					<Id>0</Id>
+					<Expression><![CDATA[players.findAll(p -> p.FiveStarGems == 5).size()]]></Expression>
+					<Color>-6632142</Color>
+					<Expression2Flag>true</Expression2Flag>
+						<Title><![CDATA[5 Five Star Gems]]></Title>
+					</DataItem>
+					<DataItem>
+					<Id>0</Id>
+					<Expression><![CDATA[players.findAll(p -> p.FiveStarGems == 6).size()]]></Expression>
+					<Color>-14513374</Color>
+					<Expression2Flag>true</Expression2Flag>
+						<Title><![CDATA[6 Five Star Gems]]></Title>
+					</DataItem>
+					<ScaleFromExpression><![CDATA[0]]></ScaleFromExpression>
+					<ScaleToExpression><![CDATA[1]]></ScaleToExpression>
+					<ScaleType>AUTO</ScaleType>
+					<Bars>
+						<Direction>UP</Direction>
+						<RelativeWidth>0.8</RelativeWidth>
+					</Bars>
+    			</BarChart>
+				<Line>
+					<Id>1656351730804</Id>
+					<Name><![CDATA[line]]></Name>
+					<X>630</X><Y>50</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>1</LineWidth>
+					<LineColor>-16777216</LineColor>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<BeginArrowSize>1</BeginArrowSize>
+					<BeginArrowStyle>0</BeginArrowStyle>
+					<EndArrowSize>1</EndArrowSize>
+					<EndArrowStyle>0</EndArrowStyle>
+					<Dx>0</Dx>
+					<Dy>520</Dy>
+					<Dz>0</Dz>
+				</Line>
+			</Presentation>
 
 				</Level>
 			</Presentation>
@@ -3666,7 +4018,7 @@ return gem;]]></Body>
 			<LoadRootFromSnapshot>false</LoadRootFromSnapshot>
 			<Variables>
 				<Variable Class="PlainVariable">
-					<Id>1656004950800</Id>
+					<Id>1656352575128</Id>
 					<Name><![CDATA[OutputData]]></Name>
 					<X>50</X><Y>-50</Y>
 					<Label><X>10</X><Y>0</Y></Label>
@@ -3681,7 +4033,7 @@ return gem;]]></Body>
 					</Properties>
 				</Variable>
 				<Variable Class="CollectionVariable">
-					<Id>1656004950784</Id>
+					<Id>1656352575114</Id>
 					<Name><![CDATA[PlayedMinutesPerDayArray]]></Name>
 					<X>50</X><Y>-100</Y>
 					<Label><X>10</X><Y>0</Y></Label>
@@ -3699,7 +4051,7 @@ return gem;]]></Body>
 
 				</Variable>
 				<Variable Class="CollectionVariable">
-					<Id>1656004950790</Id>
+					<Id>1656352575118</Id>
 					<Name><![CDATA[RiftChances]]></Name>
 					<X>50</X><Y>-150</Y>
 					<Label><X>10</X><Y>0</Y></Label>
@@ -3717,7 +4069,7 @@ return gem;]]></Body>
 
 				</Variable>
 				<Variable Class="CollectionVariable">
-					<Id>1656004950792</Id>
+					<Id>1656352575120</Id>
 					<Name><![CDATA[CraftChances]]></Name>
 					<X>50</X><Y>-200</Y>
 					<Label><X>10</X><Y>0</Y></Label>
@@ -3739,7 +4091,7 @@ return gem;]]></Body>
 				<Function AccessType="default" StaticFunction="false">
 					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
 					<ReturnType><![CDATA[double]]></ReturnType>
-					<Id>1656004950794</Id>
+					<Id>1656352575122</Id>
 					<Name><![CDATA[getPlayedMinutes]]></Name>
 					<X>300</X><Y>-100</Y>
 					<Label><X>10</X><Y>0</Y></Label>
@@ -3755,7 +4107,7 @@ return gem;]]></Body>
 				<Function AccessType="default" StaticFunction="false">
 					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
 					<ReturnType><![CDATA[double]]></ReturnType>
-					<Id>1656004950796</Id>
+					<Id>1656352575124</Id>
 					<Name><![CDATA[getRiftChance]]></Name>
 					<X>300</X><Y>-150</Y>
 					<Label><X>10</X><Y>0</Y></Label>
@@ -3771,7 +4123,7 @@ return gem;]]></Body>
 				<Function AccessType="default" StaticFunction="false">
 					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
 					<ReturnType><![CDATA[double]]></ReturnType>
-					<Id>1656004950798</Id>
+					<Id>1656352575126</Id>
 					<Name><![CDATA[getCraftChance]]></Name>
 					<X>300</X><Y>-200</Y>
 					<Label><X>10</X><Y>0</Y></Label>
@@ -3787,7 +4139,7 @@ return gem;]]></Body>
 			</Functions>
 			<Connectivity>
 				<TextFile>
-					<Id>1656004950802</Id>
+					<Id>1656352575130</Id>
 					<Name><![CDATA[OutputDataFile]]></Name>
 					<X>150</X><Y>-50</Y>
 					<Label><X>10</X><Y>0</Y></Label>
@@ -3808,7 +4160,7 @@ return gem;]]></Body>
 
 			<Presentation>
 				<Text>
-					<Id>1656004948874</Id>
+					<Id>1656352573836</Id>
 					<Name><![CDATA[text]]></Name>
 					<X>40</X><Y>30</Y>
 					<Label><X>10</X><Y>0</Y></Label>
@@ -3829,7 +4181,7 @@ return gem;]]></Body>
 					<Alignment>LEFT</Alignment>
 				</Text>
 				<Text>
-					<Id>1656004948875</Id>
+					<Id>1656352573837</Id>
 					<Name><![CDATA[text1]]></Name>
 					<X>50</X><Y>80</Y>
 					<Label><X>10</X><Y>0</Y></Label>
@@ -3850,7 +4202,7 @@ return gem;]]></Body>
 					<Alignment>LEFT</Alignment>
 				</Text>
 				<Text>
-					<Id>1656004948876</Id>
+					<Id>1656352573838</Id>
 					<Name><![CDATA[text2]]></Name>
 					<X>240</X><Y>80</Y>
 					<Label><X>10</X><Y>0</Y></Label>
@@ -3872,10 +4224,76 @@ return gem;]]></Body>
 					</Font>
 					<Alignment>RIGHT</Alignment>
 				</Text>
+				<Rectangle>
+					<Id>1656352573839</Id>
+					<Name><![CDATA[rectangle]]></Name>
+					<X>40</X><Y>100</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>1</LineWidth>
+					<LineColor/>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<Width>210</Width>
+					<Height>30</Height>
+					<Rotation>0.0</Rotation>
+					<FillColor>-657931</FillColor>
+					<FillMaterial>null</FillMaterial>
+				</Rectangle>
 				<Text>
-					<Id>1656004948877</Id>
+					<Id>1656352573840</Id>
 					<Name><![CDATA[text3]]></Name>
 					<X>50</X><Y>110</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-12171190</Color>
+					<Text><![CDATA[Simulations completed:]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>12</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1656352573841</Id>
+					<Name><![CDATA[text4]]></Name>
+					<X>240</X><Y>110</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<VisibleCode><![CDATA[getCurrentIteration() > 0]]></VisibleCode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-12042869</Color>
+					<Text><![CDATA[?]]></Text>
+					<TextCode><![CDATA[format(OutputData.getNumberOfInserts())]]></TextCode>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>12</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>RIGHT</Alignment>
+				</Text>
+				<Text>
+					<Id>1656352573842</Id>
+					<Name><![CDATA[text5]]></Name>
+					<X>50</X><Y>140</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3894,9 +4312,9 @@ return gem;]]></Body>
 					<Alignment>LEFT</Alignment>
 				</Text>
 				<Line>
-					<Id>1656004948878</Id>
+					<Id>1656352573843</Id>
 					<Name><![CDATA[line]]></Name>
-					<X>40</X><Y>130</Y>
+					<X>40</X><Y>160</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3918,9 +4336,9 @@ return gem;]]></Body>
 					<Dz>0</Dz>
 				</Line>
 				<Text>
-					<Id>1656004948879</Id>
-					<Name><![CDATA[text4]]></Name>
-					<X>50</X><Y>150</Y>
+					<Id>1656352573844</Id>
+					<Name><![CDATA[text6]]></Name>
+					<X>50</X><Y>180</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3939,9 +4357,9 @@ return gem;]]></Body>
 					<Alignment>LEFT</Alignment>
 				</Text>
 				<Text>
-					<Id>1656004948880</Id>
-					<Name><![CDATA[text5]]></Name>
-					<X>240</X><Y>150</Y>
+					<Id>1656352573845</Id>
+					<Name><![CDATA[text7]]></Name>
+					<X>240</X><Y>180</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3962,9 +4380,9 @@ return gem;]]></Body>
 					<Alignment>RIGHT</Alignment>
 				</Text>
 				<Rectangle>
-					<Id>1656004948881</Id>
-					<Name><![CDATA[rectangle]]></Name>
-					<X>40</X><Y>170</Y>
+					<Id>1656352573846</Id>
+					<Name><![CDATA[rectangle1]]></Name>
+					<X>40</X><Y>200</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3984,9 +4402,9 @@ return gem;]]></Body>
 					<FillMaterial>null</FillMaterial>
 				</Rectangle>
 				<Text>
-					<Id>1656004948882</Id>
-					<Name><![CDATA[text6]]></Name>
-					<X>50</X><Y>180</Y>
+					<Id>1656352573847</Id>
+					<Name><![CDATA[text8]]></Name>
+					<X>50</X><Y>210</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4005,9 +4423,9 @@ return gem;]]></Body>
 					<Alignment>LEFT</Alignment>
 				</Text>
 				<Text>
-					<Id>1656004948883</Id>
-					<Name><![CDATA[text7]]></Name>
-					<X>240</X><Y>180</Y>
+					<Id>1656352573848</Id>
+					<Name><![CDATA[text9]]></Name>
+					<X>240</X><Y>210</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4028,9 +4446,9 @@ return gem;]]></Body>
 					<Alignment>RIGHT</Alignment>
 				</Text>
 				<Text>
-					<Id>1656004948884</Id>
-					<Name><![CDATA[text8]]></Name>
-					<X>50</X><Y>210</Y>
+					<Id>1656352573849</Id>
+					<Name><![CDATA[text10]]></Name>
+					<X>50</X><Y>240</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4049,9 +4467,9 @@ return gem;]]></Body>
 					<Alignment>LEFT</Alignment>
 				</Text>
 				<Text>
-					<Id>1656004948885</Id>
-					<Name><![CDATA[text9]]></Name>
-					<X>240</X><Y>210</Y>
+					<Id>1656352573850</Id>
+					<Name><![CDATA[text11]]></Name>
+					<X>240</X><Y>240</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4072,9 +4490,9 @@ return gem;]]></Body>
 					<Alignment>RIGHT</Alignment>
 				</Text>
 				<Rectangle>
-					<Id>1656004948886</Id>
-					<Name><![CDATA[rectangle1]]></Name>
-					<X>40</X><Y>230</Y>
+					<Id>1656352573851</Id>
+					<Name><![CDATA[rectangle2]]></Name>
+					<X>40</X><Y>260</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4094,9 +4512,9 @@ return gem;]]></Body>
 					<FillMaterial>null</FillMaterial>
 				</Rectangle>
 				<Text>
-					<Id>1656004948887</Id>
-					<Name><![CDATA[text10]]></Name>
-					<X>50</X><Y>240</Y>
+					<Id>1656352573852</Id>
+					<Name><![CDATA[text12]]></Name>
+					<X>50</X><Y>270</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4115,9 +4533,9 @@ return gem;]]></Body>
 					<Alignment>LEFT</Alignment>
 				</Text>
 				<Text>
-					<Id>1656004948888</Id>
-					<Name><![CDATA[text11]]></Name>
-					<X>240</X><Y>240</Y>
+					<Id>1656352573853</Id>
+					<Name><![CDATA[text13]]></Name>
+					<X>240</X><Y>270</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4138,9 +4556,9 @@ return gem;]]></Body>
 					<Alignment>RIGHT</Alignment>
 				</Text>
 				<Text>
-					<Id>1656004948889</Id>
-					<Name><![CDATA[text12]]></Name>
-					<X>50</X><Y>270</Y>
+					<Id>1656352573854</Id>
+					<Name><![CDATA[text14]]></Name>
+					<X>50</X><Y>300</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4159,9 +4577,9 @@ return gem;]]></Body>
 					<Alignment>LEFT</Alignment>
 				</Text>
 				<Text>
-					<Id>1656004948890</Id>
-					<Name><![CDATA[text13]]></Name>
-					<X>240</X><Y>270</Y>
+					<Id>1656352573855</Id>
+					<Name><![CDATA[text15]]></Name>
+					<X>240</X><Y>300</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4182,9 +4600,9 @@ return gem;]]></Body>
 					<Alignment>RIGHT</Alignment>
 				</Text>
 				<Rectangle>
-					<Id>1656004948891</Id>
-					<Name><![CDATA[rectangle2]]></Name>
-					<X>40</X><Y>290</Y>
+					<Id>1656352573856</Id>
+					<Name><![CDATA[rectangle3]]></Name>
+					<X>40</X><Y>320</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4204,9 +4622,9 @@ return gem;]]></Body>
 					<FillMaterial>null</FillMaterial>
 				</Rectangle>
 				<Text>
-					<Id>1656004948892</Id>
-					<Name><![CDATA[text14]]></Name>
-					<X>50</X><Y>300</Y>
+					<Id>1656352573857</Id>
+					<Name><![CDATA[text16]]></Name>
+					<X>50</X><Y>330</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4225,9 +4643,9 @@ return gem;]]></Body>
 					<Alignment>LEFT</Alignment>
 				</Text>
 				<Text>
-					<Id>1656004948893</Id>
-					<Name><![CDATA[text15]]></Name>
-					<X>240</X><Y>300</Y>
+					<Id>1656352573858</Id>
+					<Name><![CDATA[text17]]></Name>
+					<X>240</X><Y>330</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4248,9 +4666,9 @@ return gem;]]></Body>
 					<Alignment>RIGHT</Alignment>
 				</Text>
 				<Text>
-					<Id>1656004948894</Id>
-					<Name><![CDATA[text16]]></Name>
-					<X>50</X><Y>330</Y>
+					<Id>1656352573859</Id>
+					<Name><![CDATA[text18]]></Name>
+					<X>50</X><Y>360</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4269,9 +4687,9 @@ return gem;]]></Body>
 					<Alignment>LEFT</Alignment>
 				</Text>
 				<Text>
-					<Id>1656004948895</Id>
-					<Name><![CDATA[text17]]></Name>
-					<X>240</X><Y>330</Y>
+					<Id>1656352573860</Id>
+					<Name><![CDATA[text19]]></Name>
+					<X>240</X><Y>360</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4384,7 +4802,7 @@ OutputDataFile.close();]]></AfterExperimentCode>
 				<ShowDeveloperPanelOnStart>false</ShowDeveloperPanelOnStart>
 			</PresentationProperties>
 			<ReplicationsProperties>
-				<UseReplication>false</UseReplication>
+				<UseReplication>true</UseReplication>
 				<FixedReplicationsNumber>true</FixedReplicationsNumber>
 				<ReplicationPerIteration>10</ReplicationPerIteration>
 				<MinimumReplication>2</MinimumReplication>
@@ -4560,6 +4978,7 @@ public class Statistics implements Serializable {
 public class StatisticsCollection implements Serializable {
 	
 	private final ArrayList<Statistics> statistics = new ArrayList<>();
+	private int numberOfInserts = 0;
 
     /**
      * Default constructor
@@ -4569,10 +4988,15 @@ public class StatisticsCollection implements Serializable {
     
     public synchronized void addStatistics(Collection<Statistics> statistics) {
     	this.statistics.addAll(statistics);
+    	this.numberOfInserts++;
     }
     
     public synchronized ArrayList<Statistics> getStatistics() {
     	return this.statistics;
+    }
+    
+    public synchronized int getNumberOfInserts() {
+    	return this.numberOfInserts;
     }
 
 	/**
