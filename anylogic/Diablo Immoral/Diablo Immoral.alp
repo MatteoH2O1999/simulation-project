@@ -109,6 +109,28 @@
 			</ScaleRuler>
 			<CurrentLevel>1655833014538</CurrentLevel>
 			<ConnectionsId>1655833014534</ConnectionsId>
+			<Outputs>
+				<Output>
+					<Id>1656346816258</Id>
+					<Name><![CDATA[AverageTimeInDays]]></Name>
+					<X>600</X><Y>-50</Y>
+					<Label><X>15</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Type><![CDATA[double]]></Type>
+					<UnitType><![CDATA[NONE]]></UnitType>
+					<Value Class="CodeValue">
+						<Code><![CDATA[averageTime()]]></Code>
+					</Value>
+					<ComputationMoment>ON_SIMULATION_END</ComputationMoment>
+					<ComputationTimeCode Class="CodeUnitValue">
+						<Code><![CDATA[]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
+					</ComputationTimeCode>
+					<ComputationDate>1656403200000</ComputationDate>
+				</Output>
+			</Outputs>
 			<Variables>
 				<Variable Class="PlainVariable">
 					<Id>1655936449124</Id>
@@ -361,6 +383,24 @@ return true;]]></Body>
 					<Body><![CDATA[for(Player p : players) {
 	OutputData.add(new Statistics(p));
 }]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1656347106380</Id>
+					<Name><![CDATA[averageTime]]></Name>
+					<X>450</X><Y>-150</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[double avg = 0;
+
+for(Player p : players) {
+	avg += p.DaysToReachObjective;
+}
+
+return avg / players.size();]]></Body>
 				</Function>
 			</Functions>
 			<AgentLinks>
@@ -3440,8 +3480,8 @@ return gem;]]></Body>
 			<StopOption><![CDATA[Stop at specified time]]></StopOption>
 			<InitialDate><![CDATA[1655769600000]]></InitialDate>	
 			<InitialTime><![CDATA[0.0]]></InitialTime>	
-			<FinalDate><![CDATA[1658361600000]]></FinalDate>	
-			<FinalTime><![CDATA[100.0]]></FinalTime>	
+			<FinalDate><![CDATA[88055769600000]]></FinalDate>	
+			<FinalTime><![CDATA[1000000.0]]></FinalTime>	
 		</ModelTimeProperties>
 		<AnimationProperties>
 			<StopNever>true</StopNever>
@@ -3451,9 +3491,81 @@ return gem;]]></Body>
 			<EnableDeveloperPanel>false</EnableDeveloperPanel>
 			<ShowDeveloperPanelOnStart>false</ShowDeveloperPanelOnStart>
 		</AnimationProperties>
-		<Inputs>		
+		<Inputs>
+    		<RunConfigurationInput>
+				<Id>1656347292987</Id>
+				<Name><![CDATA[Played minutes per day]]></Name>
+				<InputReference>
+					<PackageName><![CDATA[diablo_immoral]]></PackageName>
+					<ClassName><![CDATA[Main]]></ClassName>
+					<ItemName><![CDATA[PlayedMinutesPerDay]]></ItemName>
+				</InputReference>
+    		</RunConfigurationInput>
+    		<RunConfigurationInput>
+				<Id>1656347294146</Id>
+				<Name><![CDATA[Monthly legendary crests]]></Name>
+				<InputReference>
+					<PackageName><![CDATA[diablo_immoral]]></PackageName>
+					<ClassName><![CDATA[Main]]></ClassName>
+					<ItemName><![CDATA[MonthlyLegendaryCrests]]></ItemName>
+				</InputReference>
+    		</RunConfigurationInput>
+    		<RunConfigurationInput>
+				<Id>1656347298651</Id>
+				<Name><![CDATA[Monthly rare crests]]></Name>
+				<InputReference>
+					<PackageName><![CDATA[diablo_immoral]]></PackageName>
+					<ClassName><![CDATA[Main]]></ClassName>
+					<ItemName><![CDATA[MonthlyRareCrests]]></ItemName>
+				</InputReference>
+    		</RunConfigurationInput>
+    		<RunConfigurationInput>
+				<Id>1656347299802</Id>
+				<Name><![CDATA[Daily legendary crests]]></Name>
+				<InputReference>
+					<PackageName><![CDATA[diablo_immoral]]></PackageName>
+					<ClassName><![CDATA[Main]]></ClassName>
+					<ItemName><![CDATA[DailyLegendaryCrests]]></ItemName>
+				</InputReference>
+    		</RunConfigurationInput>
+    		<RunConfigurationInput>
+				<Id>1656347301722</Id>
+				<Name><![CDATA[Daily rare crests]]></Name>
+				<InputReference>
+					<PackageName><![CDATA[diablo_immoral]]></PackageName>
+					<ClassName><![CDATA[Main]]></ClassName>
+					<ItemName><![CDATA[DailyRareCrests]]></ItemName>
+				</InputReference>
+    		</RunConfigurationInput>
+    		<RunConfigurationInput>
+				<Id>1656347305505</Id>
+				<Name><![CDATA[Rift gem chance]]></Name>
+				<InputReference>
+					<PackageName><![CDATA[diablo_immoral]]></PackageName>
+					<ClassName><![CDATA[Main]]></ClassName>
+					<ItemName><![CDATA[RiftGemChance]]></ItemName>
+				</InputReference>
+    		</RunConfigurationInput>
+    		<RunConfigurationInput>
+				<Id>1656347308426</Id>
+				<Name><![CDATA[Crafted gem chance]]></Name>
+				<InputReference>
+					<PackageName><![CDATA[diablo_immoral]]></PackageName>
+					<ClassName><![CDATA[Main]]></ClassName>
+					<ItemName><![CDATA[CraftedGemChance]]></ItemName>
+				</InputReference>
+    		</RunConfigurationInput>		
 		</Inputs>
 		<Outputs>
+    		<RunConfigurationOutput>
+				<Id>1656347288876</Id>
+				<Name><![CDATA[Average time in days]]></Name>
+				<OutputReference>
+					<PackageName><![CDATA[diablo_immoral]]></PackageName>
+					<ClassName><![CDATA[Main]]></ClassName>
+					<ItemName><![CDATA[AverageTimeInDays]]></ItemName>
+				</OutputReference>
+    		</RunConfigurationOutput>
 		</Outputs>
 	</RunConfiguration>
 	<Experiments>	
@@ -3686,7 +3798,7 @@ return gem;]]></Body>
 					<Url><![CDATA[]]></Url>
 					<ResourceReference>
 						<PackageName><![CDATA[diablo_immoral]]></PackageName>
-						<ClassName><![CDATA[G:/Unimi/Simulation/project/csv/data.csv]]></ClassName>
+						<ClassName><![CDATA[Resources/csv/data.csv]]></ClassName>
 					</ResourceReference>
 					<FileMode>WRITE</FileMode>
 					<CharsetName>null</CharsetName>
@@ -4185,7 +4297,9 @@ return gem;]]></Body>
 
 for(Statistics s : OutputData.getStatistics()) {
 	OutputDataFile.println(s.toString());
-}]]></AfterExperimentCode>
+}
+
+OutputDataFile.close();]]></AfterExperimentCode>
 			<AllowParallelEvaluations>true</AllowParallelEvaluations>
 			<UseFreeformParameters>true</UseFreeformParameters>
 			<NumberOfRuns>10</NumberOfRuns>
@@ -4472,7 +4586,7 @@ public class StatisticsCollection implements Serializable {
 	</JavaClasses>
 	<ModelResources>
 		<Resource>
-			<Path><![CDATA[G:/Unimi/Simulation/project/csv/data.csv]]></Path>
+			<Path><![CDATA[Resources/csv/data.csv]]></Path>
 			<ReferencedFromUserCode>false</ReferencedFromUserCode>
 		</Resource>
 	</ModelResources>
