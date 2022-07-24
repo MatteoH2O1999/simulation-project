@@ -298,47 +298,23 @@
 					</Properties>                 
 				</Variable>
 				<Variable Class="Parameter">
-					<Id>1655993627623</Id>
-					<Name><![CDATA[RiftGemChance]]></Name>
+					<Id>1658683856482</Id>
+					<Name><![CDATA[UseFiveOutOfFive]]></Name>
 					<X>250</X><Y>-350</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
-						<Type><![CDATA[double]]></Type>
+						<Type><![CDATA[boolean]]></Type>
 						<UnitType><![CDATA[NONE]]></UnitType>
 						<SdArray>false</SdArray>
 						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[0.05]]></Code>
+							<Code><![CDATA[false]]></Code>
 						</DefaultValue>
 						<ParameterEditor>
-							<Id>1655993627621</Id>
-							<EditorContolType>TEXT_BOX</EditorContolType>
-							<MinSliderValue><![CDATA[0]]></MinSliderValue>
-							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
-							<DelimeterType>NO_DELIMETER</DelimeterType>
-						</ParameterEditor>
-					</Properties>                 
-				</Variable>
-				<Variable Class="Parameter">
-					<Id>1655994007066</Id>
-					<Name><![CDATA[CraftedGemChance]]></Name>
-					<X>250</X><Y>-400</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
-						<Type><![CDATA[double]]></Type>
-						<UnitType><![CDATA[NONE]]></UnitType>
-						<SdArray>false</SdArray>
-						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[0.045]]></Code>
-						</DefaultValue>
-						<ParameterEditor>
-							<Id>1655994007064</Id>
-							<EditorContolType>TEXT_BOX</EditorContolType>
+							<Id>1658683856480</Id>
+							<EditorContolType>CHECK_BOX</EditorContolType>
 							<MinSliderValue><![CDATA[0]]></MinSliderValue>
 							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
 							<DelimeterType>NO_DELIMETER</DelimeterType>
@@ -525,15 +501,9 @@ return avg / players.size();]]></Body>
 							</Value>
 						</Parameter>
 						<Parameter>
-							<Name><![CDATA[RiftGemChance]]></Name>
+							<Name><![CDATA[UseFiveOutOfFive]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[RiftGemChance]]></Code>
-							</Value>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[CraftedGemChance]]></Name>
-							<Value Class="CodeValue">
-								<Code><![CDATA[CraftedGemChance]]></Code>
+								<Code><![CDATA[UseFiveOutOfFive]]></Code>
 							</Value>
 						</Parameter>
 					</Parameters>
@@ -1391,47 +1361,23 @@ return avg / players.size();]]></Body>
 					</Properties>                 
 				</Variable>
 				<Variable Class="Parameter">
-					<Id>1655993565735</Id>
-					<Name><![CDATA[RiftGemChance]]></Name>
+					<Id>1658683795691</Id>
+					<Name><![CDATA[UseFiveOutOfFive]]></Name>
 					<X>50</X><Y>-550</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
-						<Type><![CDATA[double]]></Type>
+						<Type><![CDATA[boolean]]></Type>
 						<UnitType><![CDATA[NONE]]></UnitType>
 						<SdArray>false</SdArray>
 						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[0.05]]></Code>
+							<Code><![CDATA[false]]></Code>
 						</DefaultValue>
 						<ParameterEditor>
-							<Id>1655993565733</Id>
-							<EditorContolType>TEXT_BOX</EditorContolType>
-							<MinSliderValue><![CDATA[0]]></MinSliderValue>
-							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
-							<DelimeterType>NO_DELIMETER</DelimeterType>
-						</ParameterEditor>
-					</Properties>                 
-				</Variable>
-				<Variable Class="Parameter">
-					<Id>1655993972044</Id>
-					<Name><![CDATA[CraftedGemChance]]></Name>
-					<X>50</X><Y>-600</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
-						<Type><![CDATA[double]]></Type>
-						<UnitType><![CDATA[NONE]]></UnitType>
-						<SdArray>false</SdArray>
-						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[0.045]]></Code>
-						</DefaultValue>
-						<ParameterEditor>
-							<Id>1655993972042</Id>
-							<EditorContolType>TEXT_BOX</EditorContolType>
+							<Id>1658683795689</Id>
+							<EditorContolType>CHECK_BOX</EditorContolType>
 							<MinSliderValue><![CDATA[0]]></MinSliderValue>
 							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
 							<DelimeterType>NO_DELIMETER</DelimeterType>
@@ -1691,8 +1637,14 @@ LegendaryCrests = InitialLegendaryCrests;]]></Action>
 					</Points>
 					<IconOffset>40.0</IconOffset>
 					<Properties Source="1655904213477" Target="1655903192405" Trigger="message">
-						<Action><![CDATA[if(msg.IsFiveStar) {
-	FiveStarGems++;
+						<Action><![CDATA[if(UseFiveOutOfFive) {
+	if(msg.IsFiveOutOfFiveStar) {
+		FiveStarGems++;
+	}
+} else {
+	if(msg.IsFiveStar) {
+		FiveStarGems++;
+	}
 }]]></Action>
 						<Timeout Class="CodeUnitValue">
 							<Code><![CDATA[1]]></Code>
@@ -2042,7 +1994,7 @@ RareCrests += MonthlyRareCrests;]]></Action>
 				<EmbeddedObject>
 					<Id>1655931203487</Id>
 					<Name><![CDATA[elderRift]]></Name>
-					<X>250</X><Y>-50</Y>
+					<X>250</X><Y>-100</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2063,9 +2015,9 @@ RareCrests += MonthlyRareCrests;]]></Action>
 							<Name><![CDATA[AverageRiftDurationInMinutes]]></Name>
 						</Parameter>
 						<Parameter>
-							<Name><![CDATA[FiveStarChance]]></Name>
+							<Name><![CDATA[UseFiveOutOfFive]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[RiftGemChance]]></Code>
+								<Code><![CDATA[UseFiveOutOfFive]]></Code>
 							</Value>
 						</Parameter>
 					</Parameters>
@@ -2112,7 +2064,7 @@ RareCrests += MonthlyRareCrests;]]></Action>
 				<EmbeddedObject>
 					<Id>1655931285975</Id>
 					<Name><![CDATA[gemCrafter]]></Name>
-					<X>250</X><Y>-100</Y>
+					<X>250</X><Y>-50</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2130,9 +2082,9 @@ RareCrests += MonthlyRareCrests;]]></Action>
 					</GenericParameterSubstitute>
 					<Parameters>
 						<Parameter>
-							<Name><![CDATA[SuccessChance]]></Name>
+							<Name><![CDATA[UseOutOfFive]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[CraftedGemChance]]></Code>
+								<Code><![CDATA[UseFiveOutOfFive]]></Code>
 							</Value>
 						</Parameter>
 					</Parameters>
@@ -2411,6 +2363,66 @@ RareCrests += MonthlyRareCrests;]]></Action>
 						<Type><![CDATA[int]]></Type>        
 					</Properties>
 				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1658684151069</Id>
+					<Name><![CDATA[FiveStarChance]]></Name>
+					<X>600</X><Y>-100</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="true" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0.05]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1658684247694</Id>
+					<Name><![CDATA[FiveOutOfFiveGivenFive]]></Name>
+					<X>600</X><Y>-150</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="true" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0.05]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1658684372816</Id>
+					<Name><![CDATA[PityLimit]]></Name>
+					<X>750</X><Y>-100</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="true" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[50]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1658684387035</Id>
+					<Name><![CDATA[PityCounter]]></Name>
+					<X>750</X><Y>-50</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
 				<Variable Class="Parameter">
 					<Id>1655934539592</Id>
 					<Name><![CDATA[AverageRiftDurationInMinutes]]></Name>
@@ -2437,22 +2449,22 @@ RareCrests += MonthlyRareCrests;]]></Action>
 				</Variable>
 				<Variable Class="Parameter">
 					<Id>1655993211478</Id>
-					<Name><![CDATA[FiveStarChance]]></Name>
+					<Name><![CDATA[UseFiveOutOfFive]]></Name>
 					<X>200</X><Y>-200</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
-						<Type><![CDATA[double]]></Type>
+						<Type><![CDATA[boolean]]></Type>
 						<UnitType><![CDATA[NONE]]></UnitType>
 						<SdArray>false</SdArray>
 						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[0.05]]></Code>
+							<Code><![CDATA[false]]></Code>
 						</DefaultValue>
 						<ParameterEditor>
 							<Id>1655993211476</Id>
-							<EditorContolType>TEXT_BOX</EditorContolType>
+							<EditorContolType>CHECK_BOX</EditorContolType>
 							<MinSliderValue><![CDATA[0]]></MinSliderValue>
 							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
 							<DelimeterType>NO_DELIMETER</DelimeterType>
@@ -2665,9 +2677,17 @@ int gemsToGenerate = LegendaryCrests;
 if(LegendaryCrests == 10) {
 	gemsToGenerate += 3;
 }
+CraftedGem gem;
 while(gemsToGenerate > 0) {
-	if(generateGem()) {
-		loot.FiveStarGems++;
+	gem = generateGem();
+	if(UseFiveOutOfFive) {
+		if(gem.IsFiveOutOfFiveStar) {
+			loot.FiveStarGems++;
+		}
+	} else {
+		if(gem.IsFiveStar) {
+			loot.FiveStarGems++;
+		}
 	}
 	gemsToGenerate--;
 }
@@ -2676,7 +2696,7 @@ return loot;]]></Body>
 				</Function>
 				<Function AccessType="default" StaticFunction="false">
 					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
-					<ReturnType><![CDATA[boolean]]></ReturnType>
+					<ReturnType><![CDATA[CraftedGem]]></ReturnType>
 					<Id>1655993016651</Id>
 					<Name><![CDATA[generateGem]]></Name>
 					<X>400</X><Y>-150</Y>
@@ -2684,7 +2704,19 @@ return loot;]]></Body>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
-					<Body><![CDATA[return uniform() < FiveStarChance;]]></Body>
+					<Body><![CDATA[CraftedGem gem = new CraftedGem();
+PityCounter++;
+if(PityCounter == PityLimit) {
+	gem.IsFiveStar = true;
+	PityCounter = 0;
+} else {
+	gem.IsFiveStar = (bernoulli(FiveStarChance) != 0);
+	PityCounter = 0;
+}
+if(gem.IsFiveStar) {
+	gem.IsFiveOutOfFiveStar = (bernoulli(FiveOutOfFiveGivenFive) != 0);
+}
+return gem;]]></Body>
 				</Function>
 			</Functions>
 			<AgentLinks>
@@ -3104,24 +3136,54 @@ return loot;]]></Body>
 						<Type><![CDATA[CraftedGem]]></Type>        
 					</Properties>
 				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1658689987760</Id>
+					<Name><![CDATA[FiveStarChance]]></Name>
+					<X>200</X><Y>-100</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="true" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0.045]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1658689987762</Id>
+					<Name><![CDATA[FiveOutOfFiveGivenFive]]></Name>
+					<X>200</X><Y>-150</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="true" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0.045]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
 				<Variable Class="Parameter">
 					<Id>1655993741959</Id>
-					<Name><![CDATA[SuccessChance]]></Name>
+					<Name><![CDATA[UseOutOfFive]]></Name>
 					<X>50</X><Y>-50</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
-						<Type><![CDATA[double]]></Type>
+						<Type><![CDATA[boolean]]></Type>
 						<UnitType><![CDATA[NONE]]></UnitType>
 						<SdArray>false</SdArray>
 						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[0.045]]></Code>
+							<Code><![CDATA[false]]></Code>
 						</DefaultValue>
 						<ParameterEditor>
 							<Id>1655993741957</Id>
-							<EditorContolType>TEXT_BOX</EditorContolType>
+							<EditorContolType>CHECK_BOX</EditorContolType>
 							<MinSliderValue><![CDATA[0]]></MinSliderValue>
 							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
 							<DelimeterType>NO_DELIMETER</DelimeterType>
@@ -3289,7 +3351,10 @@ return loot;]]></Body>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Body><![CDATA[CraftedGem gem = new CraftedGem();
-gem.IsFiveStar = uniform() < SuccessChance;
+gem.IsFiveStar = (bernoulli(FiveStarChance) != 0);
+if(gem.IsFiveStar) {
+	gem.IsFiveOutOfFiveStar = (bernoulli(FiveOutOfFiveGivenFive) != 0);
+}
 return gem;]]></Body>
 				</Function>
 			</Functions>
@@ -3888,24 +3953,6 @@ return gem;]]></Body>
 					<ClassName><![CDATA[Main]]></ClassName>
 					<ItemName><![CDATA[DailyRareCrests]]></ItemName>
 				</InputReference>
-    		</RunConfigurationInput>
-    		<RunConfigurationInput>
-				<Id>1656347305505</Id>
-				<Name><![CDATA[Rift gem chance]]></Name>
-				<InputReference>
-					<PackageName><![CDATA[diablo_immoral]]></PackageName>
-					<ClassName><![CDATA[Main]]></ClassName>
-					<ItemName><![CDATA[RiftGemChance]]></ItemName>
-				</InputReference>
-    		</RunConfigurationInput>
-    		<RunConfigurationInput>
-				<Id>1656347308426</Id>
-				<Name><![CDATA[Crafted gem chance]]></Name>
-				<InputReference>
-					<PackageName><![CDATA[diablo_immoral]]></PackageName>
-					<ClassName><![CDATA[Main]]></ClassName>
-					<ItemName><![CDATA[CraftedGemChance]]></ItemName>
-				</InputReference>
     		</RunConfigurationInput>		
 		</Inputs>
 		<Outputs>
@@ -3979,10 +4026,7 @@ return gem;]]></Body>
 					<ParameterName><![CDATA[DailyRareCrests]]></ParameterName>
 				</Parameter>
 				<Parameter>
-					<ParameterName><![CDATA[RiftGemChance]]></ParameterName>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[CraftedGemChance]]></ParameterName>
+					<ParameterName><![CDATA[UseFiveOutOfFive]]></ParameterName>
 				</Parameter>
 			</Parameters>			
 			<PresentationProperties>
@@ -4051,8 +4095,8 @@ return gem;]]></Body>
 
 				</Variable>
 				<Variable Class="CollectionVariable">
-					<Id>1656352575118</Id>
-					<Name><![CDATA[RiftChances]]></Name>
+					<Id>1658690415082</Id>
+					<Name><![CDATA[UseFiveOutOfFiveArray]]></Name>
 					<X>50</X><Y>-150</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -4060,28 +4104,10 @@ return gem;]]></Body>
 					<ShowLabel>true</ShowLabel>
 					<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
 						<CollectionClass><![CDATA[ArrayList]]></CollectionClass>
-						<ElementClass><![CDATA[Double]]></ElementClass>
+						<ElementClass><![CDATA[Boolean]]></ElementClass>
 						<ValueElementClass><![CDATA[String]]></ValueElementClass>
 						<CollectionInitializer Class="CodeValue">
-							<Code><![CDATA[{0.05, 0.0005}]]></Code>
-						</CollectionInitializer>
-					</Properties>
-
-				</Variable>
-				<Variable Class="CollectionVariable">
-					<Id>1656352575120</Id>
-					<Name><![CDATA[CraftChances]]></Name>
-					<X>50</X><Y>-200</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
-						<CollectionClass><![CDATA[ArrayList]]></CollectionClass>
-						<ElementClass><![CDATA[Double]]></ElementClass>
-						<ValueElementClass><![CDATA[String]]></ValueElementClass>
-						<CollectionInitializer Class="CodeValue">
-							<Code><![CDATA[{0.045, 0.00045}]]></Code>
+							<Code><![CDATA[{false, true}]]></Code>
 						</CollectionInitializer>
 					</Properties>
 
@@ -4106,9 +4132,9 @@ return gem;]]></Body>
 				</Function>
 				<Function AccessType="default" StaticFunction="false">
 					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
-					<ReturnType><![CDATA[double]]></ReturnType>
-					<Id>1656352575124</Id>
-					<Name><![CDATA[getRiftChance]]></Name>
+					<ReturnType><![CDATA[boolean]]></ReturnType>
+					<Id>1658690458027</Id>
+					<Name><![CDATA[getFiveOutOfFive]]></Name>
 					<X>300</X><Y>-150</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -4118,23 +4144,7 @@ return gem;]]></Body>
 						<Name><![CDATA[index]]></Name>
 						<Type><![CDATA[int]]></Type>
 					</Parameter>
-					<Body><![CDATA[return RiftChances.get(index / 10);]]></Body>
-				</Function>
-				<Function AccessType="default" StaticFunction="false">
-					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
-					<ReturnType><![CDATA[double]]></ReturnType>
-					<Id>1656352575126</Id>
-					<Name><![CDATA[getCraftChance]]></Name>
-					<X>300</X><Y>-200</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Parameter>
-						<Name><![CDATA[index]]></Name>
-						<Type><![CDATA[int]]></Type>
-					</Parameter>
-					<Body><![CDATA[return CraftChances.get(index / 10);]]></Body>
+					<Body><![CDATA[return UseFiveOutOfFiveArray.get(index / 10);]]></Body>
 				</Function>
 			</Functions>
 			<Connectivity>
@@ -4379,30 +4389,8 @@ return gem;]]></Body>
 					</Font>
 					<Alignment>RIGHT</Alignment>
 				</Text>
-				<Rectangle>
-					<Id>1656352573846</Id>
-					<Name><![CDATA[rectangle1]]></Name>
-					<X>40</X><Y>200</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Z>0</Z>
-					<ZHeight>10</ZHeight>
-					<LineWidth>1</LineWidth>
-					<LineColor/>
-					<LineMaterial>null</LineMaterial>
-					<LineStyle>SOLID</LineStyle>
-					<Width>210</Width>
-					<Height>30</Height>
-					<Rotation>0.0</Rotation>
-					<FillColor>-657931</FillColor>
-					<FillMaterial>null</FillMaterial>
-				</Rectangle>
 				<Text>
-					<Id>1656352573847</Id>
+					<Id>1658691023992</Id>
 					<Name><![CDATA[text8]]></Name>
 					<X>50</X><Y>210</Y>
 					<Label><X>10</X><Y>0</Y></Label>
@@ -4414,7 +4402,7 @@ return gem;]]></Body>
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
 					<Color>-12171190</Color>
-					<Text><![CDATA[MonthlyLegendaryCrests]]></Text>
+					<Text><![CDATA[UseFiveOutOfFive]]></Text>
 					<Font>
 						<Name>SansSerif</Name>
 						<Size>12</Size>
@@ -4423,7 +4411,7 @@ return gem;]]></Body>
 					<Alignment>LEFT</Alignment>
 				</Text>
 				<Text>
-					<Id>1656352573848</Id>
+					<Id>1658691023998</Id>
 					<Name><![CDATA[text9]]></Name>
 					<X>240</X><Y>210</Y>
 					<Label><X>10</X><Y>0</Y></Label>
@@ -4437,271 +4425,7 @@ return gem;]]></Body>
 					<Rotation>0.0</Rotation>
 					<Color>-12042869</Color>
 					<Text><![CDATA[?]]></Text>
-					<TextCode><![CDATA[format( MonthlyLegendaryCrests )]]></TextCode>
-					<Font>
-						<Name>SansSerif</Name>
-						<Size>12</Size>
-						<Style>0</Style>
-					</Font>
-					<Alignment>RIGHT</Alignment>
-				</Text>
-				<Text>
-					<Id>1656352573849</Id>
-					<Name><![CDATA[text10]]></Name>
-					<X>50</X><Y>240</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Z>0</Z>
-					<Rotation>0.0</Rotation>
-					<Color>-12171190</Color>
-					<Text><![CDATA[MonthlyRareCrests]]></Text>
-					<Font>
-						<Name>SansSerif</Name>
-						<Size>12</Size>
-						<Style>0</Style>
-					</Font>
-					<Alignment>LEFT</Alignment>
-				</Text>
-				<Text>
-					<Id>1656352573850</Id>
-					<Name><![CDATA[text11]]></Name>
-					<X>240</X><Y>240</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<VisibleCode><![CDATA[getCurrentIteration() > 0]]></VisibleCode>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Z>0</Z>
-					<Rotation>0.0</Rotation>
-					<Color>-12042869</Color>
-					<Text><![CDATA[?]]></Text>
-					<TextCode><![CDATA[format( MonthlyRareCrests )]]></TextCode>
-					<Font>
-						<Name>SansSerif</Name>
-						<Size>12</Size>
-						<Style>0</Style>
-					</Font>
-					<Alignment>RIGHT</Alignment>
-				</Text>
-				<Rectangle>
-					<Id>1656352573851</Id>
-					<Name><![CDATA[rectangle2]]></Name>
-					<X>40</X><Y>260</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Z>0</Z>
-					<ZHeight>10</ZHeight>
-					<LineWidth>1</LineWidth>
-					<LineColor/>
-					<LineMaterial>null</LineMaterial>
-					<LineStyle>SOLID</LineStyle>
-					<Width>210</Width>
-					<Height>30</Height>
-					<Rotation>0.0</Rotation>
-					<FillColor>-657931</FillColor>
-					<FillMaterial>null</FillMaterial>
-				</Rectangle>
-				<Text>
-					<Id>1656352573852</Id>
-					<Name><![CDATA[text12]]></Name>
-					<X>50</X><Y>270</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Z>0</Z>
-					<Rotation>0.0</Rotation>
-					<Color>-12171190</Color>
-					<Text><![CDATA[DailyLegendaryCrests]]></Text>
-					<Font>
-						<Name>SansSerif</Name>
-						<Size>12</Size>
-						<Style>0</Style>
-					</Font>
-					<Alignment>LEFT</Alignment>
-				</Text>
-				<Text>
-					<Id>1656352573853</Id>
-					<Name><![CDATA[text13]]></Name>
-					<X>240</X><Y>270</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<VisibleCode><![CDATA[getCurrentIteration() > 0]]></VisibleCode>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Z>0</Z>
-					<Rotation>0.0</Rotation>
-					<Color>-12042869</Color>
-					<Text><![CDATA[?]]></Text>
-					<TextCode><![CDATA[format( DailyLegendaryCrests )]]></TextCode>
-					<Font>
-						<Name>SansSerif</Name>
-						<Size>12</Size>
-						<Style>0</Style>
-					</Font>
-					<Alignment>RIGHT</Alignment>
-				</Text>
-				<Text>
-					<Id>1656352573854</Id>
-					<Name><![CDATA[text14]]></Name>
-					<X>50</X><Y>300</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Z>0</Z>
-					<Rotation>0.0</Rotation>
-					<Color>-12171190</Color>
-					<Text><![CDATA[DailyRareCrests]]></Text>
-					<Font>
-						<Name>SansSerif</Name>
-						<Size>12</Size>
-						<Style>0</Style>
-					</Font>
-					<Alignment>LEFT</Alignment>
-				</Text>
-				<Text>
-					<Id>1656352573855</Id>
-					<Name><![CDATA[text15]]></Name>
-					<X>240</X><Y>300</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<VisibleCode><![CDATA[getCurrentIteration() > 0]]></VisibleCode>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Z>0</Z>
-					<Rotation>0.0</Rotation>
-					<Color>-12042869</Color>
-					<Text><![CDATA[?]]></Text>
-					<TextCode><![CDATA[format( DailyRareCrests )]]></TextCode>
-					<Font>
-						<Name>SansSerif</Name>
-						<Size>12</Size>
-						<Style>0</Style>
-					</Font>
-					<Alignment>RIGHT</Alignment>
-				</Text>
-				<Rectangle>
-					<Id>1656352573856</Id>
-					<Name><![CDATA[rectangle3]]></Name>
-					<X>40</X><Y>320</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Z>0</Z>
-					<ZHeight>10</ZHeight>
-					<LineWidth>1</LineWidth>
-					<LineColor/>
-					<LineMaterial>null</LineMaterial>
-					<LineStyle>SOLID</LineStyle>
-					<Width>210</Width>
-					<Height>30</Height>
-					<Rotation>0.0</Rotation>
-					<FillColor>-657931</FillColor>
-					<FillMaterial>null</FillMaterial>
-				</Rectangle>
-				<Text>
-					<Id>1656352573857</Id>
-					<Name><![CDATA[text16]]></Name>
-					<X>50</X><Y>330</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Z>0</Z>
-					<Rotation>0.0</Rotation>
-					<Color>-12171190</Color>
-					<Text><![CDATA[RiftGemChance]]></Text>
-					<Font>
-						<Name>SansSerif</Name>
-						<Size>12</Size>
-						<Style>0</Style>
-					</Font>
-					<Alignment>LEFT</Alignment>
-				</Text>
-				<Text>
-					<Id>1656352573858</Id>
-					<Name><![CDATA[text17]]></Name>
-					<X>240</X><Y>330</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<VisibleCode><![CDATA[getCurrentIteration() > 0]]></VisibleCode>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Z>0</Z>
-					<Rotation>0.0</Rotation>
-					<Color>-12042869</Color>
-					<Text><![CDATA[?]]></Text>
-					<TextCode><![CDATA[format( RiftGemChance )]]></TextCode>
-					<Font>
-						<Name>SansSerif</Name>
-						<Size>12</Size>
-						<Style>0</Style>
-					</Font>
-					<Alignment>RIGHT</Alignment>
-				</Text>
-				<Text>
-					<Id>1656352573859</Id>
-					<Name><![CDATA[text18]]></Name>
-					<X>50</X><Y>360</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Z>0</Z>
-					<Rotation>0.0</Rotation>
-					<Color>-12171190</Color>
-					<Text><![CDATA[CraftedGemChance]]></Text>
-					<Font>
-						<Name>SansSerif</Name>
-						<Size>12</Size>
-						<Style>0</Style>
-					</Font>
-					<Alignment>LEFT</Alignment>
-				</Text>
-				<Text>
-					<Id>1656352573860</Id>
-					<Name><![CDATA[text19]]></Name>
-					<X>240</X><Y>360</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<VisibleCode><![CDATA[getCurrentIteration() > 0]]></VisibleCode>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Z>0</Z>
-					<Rotation>0.0</Rotation>
-					<Color>-12042869</Color>
-					<Text><![CDATA[?]]></Text>
-					<TextCode><![CDATA[format( CraftedGemChance )]]></TextCode>
+					<TextCode><![CDATA[format( UseFiveOutOfFive )]]></TextCode>
 					<Font>
 						<Name>SansSerif</Name>
 						<Size>12</Size>
@@ -4720,7 +4444,7 @@ for(Statistics s : OutputData.getStatistics()) {
 OutputDataFile.close();]]></AfterExperimentCode>
 			<AllowParallelEvaluations>true</AllowParallelEvaluations>
 			<UseFreeformParameters>true</UseFreeformParameters>
-			<NumberOfRuns>10</NumberOfRuns>
+			<NumberOfRuns>20</NumberOfRuns>
 			<FreeformParamValue>	
 				<Id>1655911494861</Id>
 				<Expression Class="CodeValue">
@@ -4740,15 +4464,9 @@ OutputDataFile.close();]]></AfterExperimentCode>
 				<Id>1655931051831</Id>
 			</FreeformParamValue>
 			<FreeformParamValue>	
-				<Id>1655993627623</Id>
+				<Id>1658683856482</Id>
 				<Expression Class="CodeValue">
-					<Code><![CDATA[getRiftChance(index)]]></Code>
-				</Expression>
-			</FreeformParamValue>
-			<FreeformParamValue>	
-				<Id>1655994007066</Id>
-				<Expression Class="CodeValue">
-					<Code><![CDATA[getCraftChance(index)]]></Code>
+					<Code><![CDATA[getFiveOutOfFive(index)]]></Code>
 				</Expression>
 			</FreeformParamValue>
 			<RangeVariationParamValue>	
@@ -4781,11 +4499,7 @@ OutputDataFile.close();]]></AfterExperimentCode>
 				<Type>FIXED</Type>
 			</RangeVariationParamValue>
 			<RangeVariationParamValue>	
-				<Id>1655993627623</Id>
-				<Type>FIXED</Type>
-			</RangeVariationParamValue>
-			<RangeVariationParamValue>	
-				<Id>1655994007066</Id>
+				<Id>1658683856482</Id>
 				<Type>FIXED</Type>
 			</RangeVariationParamValue>
 			<ModelTimeProperties>
@@ -4802,7 +4516,7 @@ OutputDataFile.close();]]></AfterExperimentCode>
 				<ShowDeveloperPanelOnStart>false</ShowDeveloperPanelOnStart>
 			</PresentationProperties>
 			<ReplicationsProperties>
-				<UseReplication>true</UseReplication>
+				<UseReplication>false</UseReplication>
 				<FixedReplicationsNumber>true</FixedReplicationsNumber>
 				<ReplicationPerIteration>10</ReplicationPerIteration>
 				<MinimumReplication>2</MinimumReplication>
@@ -4866,24 +4580,28 @@ public class RiftLoot implements Serializable {
 public class CraftedGem implements Serializable {
 
 	public boolean IsFiveStar;
+	public boolean IsFiveOutOfFiveStar;
 
     /**
      * Default constructor
      */
     public CraftedGem() {
+    	this.IsFiveStar = false;
+    	this.IsFiveOutOfFiveStar = false;
     }
 
     /**
      * Constructor initializing the fields
      */
-    public CraftedGem(boolean IsFiveStar) {
+    public CraftedGem(boolean IsFiveStar, boolean IsFiveOutOfFiveStar) {
 		this.IsFiveStar = IsFiveStar;
+		this.IsFiveOutOfFiveStar = IsFiveOutOfFiveStar;
     }
 
 	@Override
 	public String toString() {
 		return  
-			"IsFiveStar = " + IsFiveStar +" ";
+			"IsFiveStar = " + IsFiveStar +" IsFiveOutOfFiveStar" + IsFiveOutOfFiveStar;
 	}
 
 	/**
@@ -4905,13 +4623,12 @@ public class Statistics implements Serializable {
 	
 	private double PlayedMinutesPerDay;
 	private double DaysToReachTargetNumberOfFiveStarGems;
-	private double RiftGemChance;
-	private double CraftGemChance;
 	private int DailyRareCrests;
 	private int DailyLegendaryCrests;
 	private int MonthlyRareCrests;
 	private int MonthlyLegendaryCrests;
 	private int TargetNumberOfFiveStarGems;
+	private boolean FiveOutOfFive;
 	
     /**
      * Default constructor
@@ -4927,8 +4644,7 @@ public class Statistics implements Serializable {
     	this.MonthlyLegendaryCrests = p.MonthlyLegendaryCrests;
     	this.TargetNumberOfFiveStarGems = p.TargetFiveStarGems;
     	this.DaysToReachTargetNumberOfFiveStarGems = p.DaysToReachObjective;
-    	this.RiftGemChance = p.RiftGemChance;
-    	this.CraftGemChance = p.CraftedGemChance;
+    	this.FiveOutOfFive = p.UseFiveOutOfFive;
     }
 
 	@Override
@@ -4939,8 +4655,7 @@ public class Statistics implements Serializable {
 		builder.append(Integer.toString(this.DailyLegendaryCrests)).append(";");
 		builder.append(Integer.toString(this.MonthlyRareCrests)).append(";");
 		builder.append(Integer.toString(this.MonthlyLegendaryCrests)).append(";");
-		builder.append(Double.toString(this.RiftGemChance)).append(";");
-		builder.append(Double.toString(this.CraftGemChance)).append(";");
+		builder.append(Boolean.toString(this.FiveOutOfFive)).append(";");
 		builder.append(Integer.toString(this.TargetNumberOfFiveStarGems)).append(";");
 		builder.append(Double.toString(this.DaysToReachTargetNumberOfFiveStarGems));
 		return builder.toString();
@@ -4953,8 +4668,7 @@ public class Statistics implements Serializable {
 		builder.append("DailyLegendaryCrests;");
 		builder.append("MonthlyRareCrests;");
 		builder.append("MonthlyLegendaryCrests;");
-		builder.append("ChanceOfFindingGemInRift;");
-		builder.append("ChanceOfCraftingGem;");
+		builder.append("UsingFiveOutOfFive;");
 		builder.append("TargetNumberOfFiveStarGems;");
 		builder.append("DaysToReachTargetNumberOfFiveStarGems");
 		return builder.toString();
