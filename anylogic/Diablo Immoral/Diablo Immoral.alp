@@ -4,7 +4,7 @@
 	         AnyLogic Project File 
 *************************************************	         
 -->
-<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.8.0.202208091057" AlpVersion="8.7.5">
+<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.8.1.202210270952" AlpVersion="8.7.7">
 <Model>
 	<Id>1655833014533</Id>
 	<Name><![CDATA[Diablo Immoral]]></Name>
@@ -2708,12 +2708,11 @@ return loot;]]></Body>
 PityCounter++;
 if(PityCounter == PityLimit) {
 	gem.IsFiveStar = true;
-	PityCounter = 0;
 } else {
 	gem.IsFiveStar = (bernoulli(FiveStarChance) != 0);
-	PityCounter = 0;
 }
 if(gem.IsFiveStar) {
+	PityCounter = 0;
 	gem.IsFiveOutOfFiveStar = (bernoulli(FiveOutOfFiveGivenFive) != 0);
 }
 return gem;]]></Body>
